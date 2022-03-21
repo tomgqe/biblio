@@ -1,0 +1,6 @@
+org/miage/biblio/entity/Avion.class
+org/miage/biblio/HotelServiceApplication.class
+org/miage/biblio/KafkaProducerConfig.class
+org/miage/biblio/entity/Hotel.class
+org/miage/biblio/boundary/HotelRepository.class
+org/miage/biblio/boundary/HotelRessource.class

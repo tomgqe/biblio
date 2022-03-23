@@ -22,10 +22,12 @@ public class KafkaProducerConfig {
     return new KafkaTemplate<>(producerFactory());
   }
 
+/*
   @Bean
   public KafkaTemplate<String, Avion> kafkaTemplateReservation() {
     return new KafkaTemplate<>(producerFactoryAvion());
   }
+*/
 
   @Bean
   public ProducerFactory<String, Hotel> producerFactory() {
@@ -36,14 +38,14 @@ public class KafkaProducerConfig {
     return new DefaultKafkaProducerFactory<>(configs);
   }
 
-  @Bean
+/*  @Bean
   public ProducerFactory<String, Avion> producerFactoryAvion() {
     Map<String, Object> configs = new HashMap<>();
     configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
     configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
     configs.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, JsonSerializer.class);
     return new DefaultKafkaProducerFactory<>(configs);
-  }
+  }*/
 
 
 }

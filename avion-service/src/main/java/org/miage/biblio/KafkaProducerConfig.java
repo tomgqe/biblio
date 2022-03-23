@@ -6,6 +6,7 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.common.config.TopicConfig;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.miage.biblio.entity.Avion;
+import org.miage.biblio.entity.Hotel;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.config.TopicBuilder;
@@ -23,13 +24,13 @@ public class KafkaProducerConfig {
 
 
   @Bean
-  public KafkaTemplate<String, Avion> kafkaTemplate() {
+  public KafkaTemplate<String, Hotel> kafkaTemplate() {
     return new KafkaTemplate<>(producerFactory());
   }
 
 
   @Bean
-  public ProducerFactory<String, Avion> producerFactory() {
+  public ProducerFactory<String, Hotel> producerFactory() {
     Map<String, Object> configs = new HashMap<>();
     configs.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
     configs.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
@@ -37,7 +38,7 @@ public class KafkaProducerConfig {
     return new DefaultKafkaProducerFactory<>(configs);
   }
 
-  @Bean
+ /* @Bean
   public KafkaAdmin admin() {
     Map<String, Object> configs = new HashMap<>();
     configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
@@ -54,6 +55,6 @@ public class KafkaProducerConfig {
   public NewTopic topic2() {
     return TopicBuilder.name("reservation-topic")
             .build();
-  }
+  }*/
 
 }

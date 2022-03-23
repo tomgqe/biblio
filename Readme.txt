@@ -25,12 +25,12 @@ on insère un nouvel élément, avec la commande:
 	http POST :8080/hotels ville="Barcelone" nom="grand Hotel"
 
 Le service Hotel prévient le service Avions en fin de transaction
-	http :9000/avions	//avion {destination="Barcelone"
+	http :9000/avions	//avion {destination="Barcelone"}
 
 Pour montrer la compensation :
 
 http POST :8080/hotels ville="Madrid" nom="petit Hotel"
 Le service Hotel prévient le service Avions en fin de transaction mais Avion plante
 	http :9000/avions	//pas d'avions vers Madrid
-LA compensation est appelée et l'hotel passe à "annulé)
+La compensation est appelée et l'hotel passe à "Remboursé"
 
